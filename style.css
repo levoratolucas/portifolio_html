@@ -1,0 +1,90 @@
+@keyframes anima{
+    0%{background-color: rgb(255, 255, 255) ;}
+    15%{background-color: orange;} 
+    30%{background-color:red ;}
+    45%{background-color: purple ;}
+    60%{background-color: blue;} 
+    75%{background-color:green;}
+    90%{background-color: gray ;}
+}
+
+  @keyframes cubeRotateDiagonal {
+    0% {
+      transform:  rotateX(-0deg) rotateY(-360deg); /* Incline 45 graus em X e 45 graus em Y */
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg); /* Mantenha a inclinação constante durante a animação */
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+      
+     
+}
+
+.topo{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    width: 100%;
+    height: 30px;
+    background-color:rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    animation-name: anima;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center; 
+       
+}
+.kube{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 400px;
+    margin-top: 15%;
+    background-color: black;
+    
+}
+
+
+.logo{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: cubeRotateDiagonal 10s linear infinite;
+    border-radius: 100%;
+    
+    
+    
+}
+.logo >div{
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0.8;
+}
+.esq{
+        transform: rotateY(90deg) translateZ(100px);    
+}
+.dir{
+    background-color: blanchedalmond;
+    transform: rotateY(-90deg) translateZ(100px);    
+}
+.cima{
+    transform: rotatex(-90deg) translateZ(100px);
+}
+.baixo{
+    transform: rotatex(90deg) translateZ(100px);
+}
+.frente{
+    background-color: rgb(255, 255, 255);
+    transform: translateZ(100px);}
+.tras{
+    transform: translateZ(-100px);
+    
+}
